@@ -1,6 +1,13 @@
-import {Entity,Column, CreateDateColumn, UpdateDateColumn, PrimaryColumn} from 'typeorm'
-import {v4 as uuid} from 'uuid';
-//criação da entidade
+import {
+  Entity,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn,
+  PrimaryColumn,
+} from "typeorm";
+
+import { v4 as uuid } from "uuid";
+
 @Entity("settings")
 class Setting {
   @PrimaryColumn()
@@ -8,7 +15,7 @@ class Setting {
 
   @Column()
   username: string;
-  
+
   @Column()
   chat: boolean;
 
@@ -18,13 +25,11 @@ class Setting {
   @CreateDateColumn()
   created_at: Date;
 
-  //sempre executado após o new
   constructor() {
-    //verifica se tem o id para atribuir o uuid
-    if(!this.id) {
+    if (!this.id) {
       this.id = uuid();
     }
   }
 }
 
-export  { Setting }
+export { Setting };

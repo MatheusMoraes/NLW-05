@@ -1,3 +1,3 @@
-import {createConnection} from 'typeorm';
-//cria a conexão com o banco 
+import { createConnection } from "typeorm";
+
 createConnection();
